@@ -2,6 +2,7 @@ FROM debian:jessie
 
 RUN set -xe \
     && apt-get update && apt-get install -y \
+        sudo \
         libcgi-pm-perl \
         libio-socket-ssl-perl \
         libipc-run-perl \
