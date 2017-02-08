@@ -13,4 +13,5 @@ RUN set -xe \
         libtry-tiny-perl \
         libset-object-perl \
         --no-install-recommends \
+    && apt-get upgrade -y \
     && rm -rf /var/lib/apt/lists/*
