@@ -32,7 +32,7 @@
 FROM debian:jessie
 
 RUN set -xe \
-    && apt-get update && apt-get upgrade -y \
+    && apt-get update \
     && apt-get install -y \
         sudo \
         libcgi-pm-perl \
