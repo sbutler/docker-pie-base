@@ -34,7 +34,7 @@ FROM ubuntu:18.04
 RUN set -xe \
     && apt-get update \
     && apt-get install -y \
-        sudo \
+        jq \
         libcgi-pm-perl \
         libio-socket-ssl-perl \
         libipc-run-perl \
@@ -44,10 +44,11 @@ RUN set -xe \
         libtemplate-plugin-xml-perl \
         libtry-tiny-perl \
         libset-object-perl \
-        python \
-        python-pip \
         libyaml-0-2 libyaml-dev \
-        jq \
+        python3 \
+        python3-pip \
+        python3-setuptools \
+        sudo \
         --no-install-recommends \
-    && pip install awscli \
+    && pip3 install awscli \
     && rm -rf /var/lib/apt/lists/*
