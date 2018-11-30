@@ -44,5 +44,10 @@ RUN set -xe \
         libtemplate-plugin-xml-perl \
         libtry-tiny-perl \
         libset-object-perl \
+        python \
+        python-pip \
+        libyaml-0-2 libyaml-dev \
+        jq \
         --no-install-recommends \
+    && pip install awscli \
     && rm -rf /var/lib/apt/lists/*
