@@ -29,10 +29,10 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH
 # THE SOFTWARE.
-FROM debian:jessie
+FROM ubuntu:18.04
 
 RUN set -xe \
-    && apt-get update && apt-get upgrade -y \
+    && apt-get update \
     && apt-get install -y \
         sudo \
         libcgi-pm-perl \
