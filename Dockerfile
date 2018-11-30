@@ -33,7 +33,7 @@ FROM ubuntu:18.04
 
 RUN set -xe \
     && apt-get update \
-    && apt-get install -y \
+    && apt-get install -y --no-install-recommends \
         jq \
         libcgi-pm-perl \
         libio-socket-ssl-perl \
@@ -49,6 +49,5 @@ RUN set -xe \
         python3-pip \
         python3-setuptools \
         sudo \
-        --no-install-recommends \
-    && pip3 install awscli \
+    && pip3 install --no-cache-dir awscli \
     && rm -rf /var/lib/apt/lists/*
