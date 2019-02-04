@@ -45,9 +45,14 @@ RUN set -xe \
         libtry-tiny-perl \
         libset-object-perl \
         libyaml-0-2 libyaml-dev \
+        logrotate \
         python3 \
         python3-pip \
         python3-setuptools \
         sudo \
     && pip3 install --no-cache-dir awscli \
     && rm -rf /var/lib/apt/lists/*
+
+COPY etc/ /etc
+
+RUN rm /etc/logrotate.d/*
