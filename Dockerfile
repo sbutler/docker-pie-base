@@ -29,29 +29,38 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH
 # THE SOFTWARE.
-FROM ubuntu:18.04
+FROM ubuntu:20.04
+
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN set -xe \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
+        ansible \
+        curl \
         jq \
         libcgi-pm-perl \
         libio-socket-ssl-perl \
         libipc-run-perl \
         libjson-perl \
         liblog-dispatch-perl \
-        libtemplate-perl \
-        libtemplate-plugin-xml-perl \
         libtry-tiny-perl \
         libset-object-perl \
-        libyaml-0-2 libyaml-dev \
+        libyaml-0-2 \
         logrotate \
         python3 \
         python3-pip \
         python3-setuptools \
         sudo \
-    && pip3 install --no-cache-dir awscli \
+        unzip \
     && rm -rf /var/lib/apt/lists/*
+
+RUN set -xe \
+    && cd /tmp \
+    && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+    && unzip awscliv2.zip \
+    && ./aws/install \
+    && rm -fr awscliv2.zip aws
 
 COPY etc/ /etc
 
