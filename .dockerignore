@@ -1,0 +1,6 @@
+.git/
+.vscode/
+dist/
+
+LICENSE.md
+Makefile
