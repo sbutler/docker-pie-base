@@ -12,6 +12,8 @@ RUN set -xe \
         libio-socket-ssl-perl \
         libipc-run-perl \
         libjson-perl \
+        libldap-2.5-0 \
+        libldap-common \
         liblog-dispatch-perl \
         libtemplate-perl \
         libtemplate-plugin-xml-perl \
