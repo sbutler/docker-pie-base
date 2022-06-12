@@ -5,6 +5,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN set -xe \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
+        ca-certificates \
         curl \
         jq \
         libcgi-pm-perl \
