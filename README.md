@@ -8,6 +8,6 @@ Instead of having a normal branch structure with `main` and `develop`, this
 repository is organized with branches for the base Docker image. Current
 branches used for building:
 
-- `ubuntu22.04`: production as of June 2022.
-- `ubuntu20.04`
-- `ubuntu18.04`: production before June 2022.
+- `main/ubuntu22.04`: production as of June 2022.
+- `main/ubuntu20.04`
+- `main/ubuntu18.04`: production before June 2022.
