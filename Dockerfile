@@ -25,6 +25,7 @@ RUN set -xe \
         python3-pip \
         python3-setuptools \
         sudo \
+        tzdata \
         unzip \
     && rm -rf /var/lib/apt/lists/*
 
@@ -35,6 +36,7 @@ RUN set -xe \
     && ./aws/install \
     && rm -fr awscliv2.zip aws
 
+COPY LICENSE.md /
 COPY etc/ /etc
 
 RUN rm /etc/logrotate.d/*
